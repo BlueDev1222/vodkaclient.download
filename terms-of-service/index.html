@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Terms of Service | Vodka Client</title>
+
+    <meta
+        name="description"
+        content="Terms of Service for Vodka Client."
+    >
+
+    <meta name="theme-color" content="#08080a">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/VC%20logo.png">
+    <link rel="shortcut icon" type="image/png" href="/VC%20logo.png">
+    <link rel="apple-touch-icon" href="/VC%20logo.png">
+
+    <!-- SOCIAL / DISCORD EMBED -->
+    <meta property="og:title" content="Vodka Client | Terms of Service">
+    <meta property="og:site_name" content="Vodka Client">
+
+    <meta
+        property="og:description"
+        content="Read the Terms of Service for Vodka Client."
+    >
+
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:url"
+        content="https://vodkaclient.download/terms-of-service/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://vodkaclient.download/VC%20logo.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Vodka Client Logo"
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(190, 35, 50, 0.18),
+                    transparent 38%
+                ),
+                #08080a;
+
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* NAV */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 8, 10, 0.75);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .nav-inner {
+            max-width: 1180px;
+            height: 76px;
+            margin: auto;
+
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo img {
+            width: 44px;
+            height: 44px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 0 25px rgba(239,51,73,0.15);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            color: #a9a9b1;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .home-button {
+            padding: 10px 17px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            background:
+                rgba(255,255,255,0.035);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .home-button:hover {
+            background:
+                rgba(255,255,255,0.07);
+
+            border-color:
+                rgba(255,255,255,0.2);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding:
+                150px
+                24px
+                70px;
+
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100px;
+            height: 100px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+
+            margin-bottom: 24px;
+
+            box-shadow:
+                0 0 60px rgba(239,51,73,0.18);
+        }
+
+        .label {
+            color: #ef3349;
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size:
+                clamp(
+                    44px,
+                    8vw,
+                    82px
+                );
+
+            letter-spacing: -4px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #96969f;
+
+            max-width: 680px;
+
+            margin: auto;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+        .updated {
+            margin-top: 22px;
+
+            color: #686870;
+
+            font-size: 13px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+
+            padding:
+                0
+                24px
+                120px;
+        }
+
+        .terms-card {
+            padding: 48px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.018)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.075);
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,0.25);
+        }
+
+        .terms-card section {
+            padding: 0;
+            margin-bottom: 48px;
+        }
+
+        .terms-card section:last-child {
+            margin-bottom: 0;
+        }
+
+        .terms-card h2 {
+            font-size: 25px;
+            margin-bottom: 16px;
+
+            letter-spacing: -0.7px;
+        }
+
+        .terms-card p,
+        .terms-card li {
+            color: #a0a0a8;
+
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .terms-card p + p {
+            margin-top: 14px;
+        }
+
+        .terms-card ul {
+            margin:
+                16px
+                0
+                0
+                22px;
+        }
+
+        .terms-card li {
+            margin-bottom: 10px;
+        }
+
+        .terms-card strong {
+            color: #e9e9ed;
+        }
+
+        .notice {
+            margin-bottom: 35px;
+
+            padding: 20px 22px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(239,51,73,0.06);
+
+            border:
+                1px solid rgba(239,51,73,0.18);
+
+            color: #bcbcc4;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .notice strong {
+            color: #ff667a;
+        }
+
+        .contact-box {
+            padding: 22px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.06);
+
+            margin-top: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+
+            padding:
+                35px
+                24px;
+        }
+
+        .footer-inner {
+            max-width: 1180px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #66666e;
+
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a:hover {
+            color: #aaaab2;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .terms-card {
+                padding: 28px 22px;
+            }
+
+            .hero {
+                padding-top: 125px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <div class="nav-inner">
+
+        <a href="/" class="logo">
+            <img
+                src="/VC%20logo.png"
+                alt="Vodka Client Logo"
+            >
+
+            <span>VODKA</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#features">Features</a>
+            <a href="/#builders">Builders</a>
+        </div>
+
+        <a href="/" class="home-button">
+            Back Home
+        </a>
+
+    </div>
+</nav>
+
+
+<main>
+
+    <section class="hero">
+
+        <img
+            src="/VC%20logo.png"
+            alt="Vodka Client Logo"
+        >
+
+        <div class="label">
+            Legal
+        </div>
+
+        <h1>
+            Terms of Service
+        </h1>
+
+        <p>
+            These Terms of Service govern your access to and use of
+            Vodka Client, the Vodka Client website, downloads, software,
+            services, and related content.
+        </p>
+
+        <div class="updated">
+            Last updated: September 4, 2026
+        </div>
+
+    </section>
+
+
+    <div class="container">
+
+        <div class="terms-card">
+
+            <div class="notice">
+                <strong>Please read these terms carefully.</strong>
+                By accessing, downloading, installing, or using Vodka Client,
+                you agree to these Terms of Service.
+            </div>
+
+
+            <section>
+                <h2>1. Acceptance of Terms</h2>
+
+                <p>
+                    By accessing or using Vodka Client or
+                    vodkaclient.download, you agree to be bound by these
+                    Terms of Service.
+                </p>
+
+                <p>
+                    If you do not agree with these terms, you should not
+                    download, install, access, or use Vodka Client.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>2. About Vodka Client</h2>
+
+                <p>
+                    Vodka Client is a Minecraft client intended to provide
+                    utilities and features for players, including tools
+                    designed for building, anarchy gameplay, PvP,
+                    Crystal PvP, rendering, navigation, and other
+                    Minecraft-related activities.
+                </p>
+
+                <p>
+                    Vodka Client is currently under development.
+                    Features, modules, compatibility, availability,
+                    design, and functionality may change at any time.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>3. Use at Your Own Risk</h2>
+
+                <p>
+                    You are responsible for how you choose to use
+                    Vodka Client.
+                </p>
+
+                <p>
+                    Minecraft servers may have their own rules regarding
+                    modified clients, automation, combat utilities,
+                    movement tools, building tools, or other features.
+                    Use of Vodka Client may result in warnings, kicks,
+                    temporary bans, permanent bans, or other action from
+                    server administrators.
+                </p>
+
+                <p>
+                    Vodka Client does not guarantee that any feature is
+                    permitted on any specific Minecraft server.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>4. Server Rules</h2>
+
+                <p>
+                    You are responsible for reviewing and following the
+                    rules of any Minecraft server you choose to join.
+                </p>
+
+                <p>
+                    The availability of a feature inside Vodka Client does
+                    not mean that the feature is permitted by a server.
+                </p>
+
+                <p>
+                    Vodka Client is not responsible for punishments,
+                    bans, account restrictions, resets, lost items,
+                    lost progress, or any other consequences caused by
+                    your use of the client.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>5. Accounts and Minecraft</h2>
+
+                <p>
+                    You are responsible for your own Minecraft account,
+                    Microsoft account, authentication information, and
+                    any account used with Vodka Client.
+                </p>
+
+                <p>
+                    You should never share your account credentials with
+                    another person.
+                </p>
+
+                <p>
+                    Vodka Client is not responsible for account loss,
+                    account suspension, unauthorized access, or actions
+                    taken against your Minecraft or Microsoft account.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>6. Prohibited Use</h2>
+
+                <p>
+                    You may not use Vodka Client, its website, or its
+                    services to:
+                </p>
+
+                <ul>
+                    <li>
+                        Distribute malware, viruses, ransomware, spyware,
+                        or other malicious software.
+                    </li>
+
+                    <li>
+                        Attempt to compromise Vodka Client infrastructure,
+                        hosting, servers, accounts, or services.
+                    </li>
+
+                    <li>
+                        Impersonate Vodka Client developers, staff,
+                        contributors, or official services.
+                    </li>
+
+                    <li>
+                        Redistribute modified versions of Vodka Client
+                        while falsely claiming they are official releases.
+                    </li>
+
+                    <li>
+                        Use Vodka Client branding to intentionally mislead
+                        users into downloading unofficial or malicious files.
+                    </li>
+                </ul>
+            </section>
+
+
+            <section>
+                <h2>7. Downloads and Software</h2>
+
+                <p>
+                    You should only download Vodka Client from locations
+                    officially identified by Vodka Client.
+                </p>
+
+                <p>
+                    We are not responsible for unofficial copies,
+                    modified builds, reuploads, cracked copies,
+                    fake downloads, or third-party distributions.
+                </p>
+
+                <p>
+                    Software may contain bugs, crashes, incomplete
+                    functionality, compatibility problems, or other
+                    technical issues, especially during development.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>8. Updates and Changes</h2>
+
+                <p>
+                    Vodka Client may receive updates at any time.
+                </p>
+
+                <p>
+                    Features may be added, changed, disabled, restricted,
+                    redesigned, or removed without prior notice.
+                </p>
+
+                <p>
+                    Older versions of Vodka Client may stop functioning
+                    or may no longer be supported.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>9. Availability</h2>
+
+                <p>
+                    We do not guarantee that Vodka Client, its website,
+                    downloads, authentication systems, update systems,
+                    APIs, or other services will always be available.
+                </p>
+
+                <p>
+                    Services may temporarily or permanently become
+                    unavailable because of maintenance, development,
+                    technical problems, hosting issues, security concerns,
+                    or other reasons.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>10. Intellectual Property</h2>
+
+                <p>
+                    Unless otherwise stated, Vodka Client branding,
+                    logos, website designs, original graphics,
+                    software, and other original materials are owned by
+                    or licensed to Vodka Client.
+                </p>
+
+                <p>
+                    You may not falsely represent yourself as the creator,
+                    owner, or official distributor of Vodka Client.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>11. No Warranty</h2>
+
+                <p>
+                    Vodka Client is provided on an
+                    <strong>"as is"</strong> and
+                    <strong>"as available"</strong> basis.
+                </p>
+
+                <p>
+                    To the maximum extent permitted by applicable law,
+                    no guarantee is made that Vodka Client will be
+                    error-free, uninterrupted, compatible with every
+                    Minecraft version, compatible with every server,
+                    or suitable for every purpose.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>12. Limitation of Liability</h2>
+
+                <p>
+                    To the maximum extent permitted by applicable law,
+                    Vodka Client and its developers will not be responsible
+                    for indirect, incidental, consequential, or special
+                    losses arising from your use of the software.
+                </p>
+
+                <p>
+                    This may include, where legally permitted, loss of
+                    Minecraft accounts, server bans, lost worlds,
+                    lost items, corrupted files, lost configuration data,
+                    lost progress, lost profits, or other damages.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>13. Third-Party Services</h2>
+
+                <p>
+                    Vodka Client may interact with Minecraft, Microsoft,
+                    Mojang, Minecraft servers, hosting providers,
+                    libraries, APIs, or other third-party services.
+                </p>
+
+                <p>
+                    Those services are governed by their own terms,
+                    policies, and rules.
+                </p>
+
+                <p>
+                    Vodka Client does not control and is not responsible
+                    for third-party services.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>14. Minecraft and Mojang Disclaimer</h2>
+
+                <p>
+                    Vodka Client is an independent project and is not
+                    affiliated with, endorsed by, sponsored by, or
+                    officially associated with Mojang Studios,
+                    Microsoft, or Minecraft.
+                </p>
+
+                <p>
+                    Minecraft and related trademarks belong to their
+                    respective owners.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>15. Termination and Restriction</h2>
+
+                <p>
+                    Access to Vodka Client services may be restricted or
+                    terminated when necessary to protect the project,
+                    its infrastructure, its users, or its services.
+                </p>
+
+                <p>
+                    This may include situations involving abuse,
+                    malicious activity, attacks on infrastructure,
+                    impersonation, unauthorized redistribution,
+                    or violations of these terms.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>16. Changes to These Terms</h2>
+
+                <p>
+                    These Terms of Service may be updated from time to time
+                    as Vodka Client develops.
+                </p>
+
+                <p>
+                    The updated version will be published on this page.
+                    Continuing to use Vodka Client after changes are
+                    published means you agree to the revised terms.
+                </p>
+            </section>
+
+
+            <section>
+                <h2>17. Contact</h2>
+
+                <p>
+                    Questions regarding these Terms of Service may be
+                    directed through the official contact method provided
+                    by Vodka Client.
+                </p>
+
+                <div class="contact-box">
+                    Official website:
+                    <strong>vodkaclient.download</strong>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Vodka Client
+        </div>
+
+        <div class="footer-links">
+            <a href="/">Home</a>
+            <a href="/terms-of-service/">Terms of Service</a>
+        </div>
+
+        <div>
+            Not affiliated with Mojang Studios or Microsoft.
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
