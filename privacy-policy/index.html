@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Privacy Policy | Vodka Client</title>
+
+    <meta
+        name="description"
+        content="Privacy Policy for Vodka Client."
+    >
+
+    <meta name="theme-color" content="#08080a">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" href="/VC%20logo.png">
+    <link rel="shortcut icon" type="image/png" href="/VC%20logo.png">
+    <link rel="apple-touch-icon" href="/VC%20logo.png">
+
+    <!-- SOCIAL / DISCORD EMBED -->
+    <meta property="og:title" content="Vodka Client | Privacy Policy">
+    <meta property="og:site_name" content="Vodka Client">
+
+    <meta
+        property="og:description"
+        content="Read the Privacy Policy for Vodka Client."
+    >
+
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:url"
+        content="https://vodkaclient.download/privacy-policy/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://vodkaclient.download/VC%20logo.png"
+    >
+
+    <meta
+        property="og:image:alt"
+        content="Vodka Client Logo"
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    rgba(190, 35, 50, 0.18),
+                    transparent 38%
+                ),
+                #08080a;
+
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.018) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(8, 8, 10, 0.75);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,0.07);
+        }
+
+        .nav-inner {
+            max-width: 1180px;
+            height: 76px;
+            margin: auto;
+
+            padding: 0 24px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 20px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo img {
+            width: 44px;
+            height: 44px;
+
+            object-fit: cover;
+
+            border-radius: 10px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            box-shadow:
+                0 0 25px rgba(239,51,73,0.15);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+            color: #a9a9b1;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .home-button {
+            padding: 10px 17px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid rgba(255,255,255,0.1);
+
+            background:
+                rgba(255,255,255,0.035);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .home-button:hover {
+            background:
+                rgba(255,255,255,0.07);
+
+            border-color:
+                rgba(255,255,255,0.2);
+        }
+
+        .hero {
+            padding:
+                150px
+                24px
+                70px;
+
+            text-align: center;
+        }
+
+        .hero img {
+            width: 100px;
+            height: 100px;
+
+            object-fit: cover;
+
+            border-radius: 22px;
+
+            margin-bottom: 24px;
+
+            box-shadow:
+                0 0 60px rgba(239,51,73,0.18);
+        }
+
+        .label {
+            color: #ef3349;
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size:
+                clamp(
+                    44px,
+                    8vw,
+                    82px
+                );
+
+            letter-spacing: -4px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #96969f;
+
+            max-width: 680px;
+
+            margin: auto;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+        .updated {
+            margin-top: 22px;
+
+            color: #686870;
+
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+
+            padding:
+                0
+                24px
+                120px;
+        }
+
+        .privacy-card {
+            padding: 48px;
+
+            border-radius: 24px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.05),
+                    rgba(255,255,255,0.018)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.075);
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,0.25);
+        }
+
+        .privacy-card section {
+            padding: 0;
+            margin-bottom: 48px;
+        }
+
+        .privacy-card section:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-card h2 {
+            font-size: 25px;
+
+            margin-bottom: 16px;
+
+            letter-spacing: -0.7px;
+        }
+
+        .privacy-card p,
+        .privacy-card li {
+            color: #a0a0a8;
+
+            font-size: 15px;
+
+            line-height: 1.85;
+        }
+
+        .privacy-card p + p {
+            margin-top: 14px;
+        }
+
+        .privacy-card ul {
+            margin:
+                16px
+                0
+                0
+                22px;
+        }
+
+        .privacy-card li {
+            margin-bottom: 10px;
+        }
+
+        .privacy-card strong {
+            color: #e9e9ed;
+        }
+
+        .notice {
+            margin-bottom: 35px;
+
+            padding: 20px 22px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(239,51,73,0.06);
+
+            border:
+                1px solid rgba(239,51,73,0.18);
+
+            color: #bcbcc4;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .notice strong {
+            color: #ff667a;
+        }
+
+        .info-box {
+            padding: 22px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(255,255,255,0.03);
+
+            border:
+                1px solid rgba(255,255,255,0.06);
+
+            margin-top: 15px;
+        }
+
+        footer {
+            border-top:
+                1px solid rgba(255,255,255,0.06);
+
+            padding:
+                35px
+                24px;
+        }
+
+        .footer-inner {
+            max-width: 1180px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+
+            color: #66666e;
+
+            font-size: 13px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a:hover {
+            color: #aaaab2;
+        }
+
+        @media(max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .privacy-card {
+                padding: 28px 22px;
+            }
+
+            .hero {
+                padding-top: 125px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="/" class="logo">
+
+            <img
+                src="/VC%20logo.png"
+                alt="Vodka Client Logo"
+            >
+
+            <span>VODKA</span>
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/#features">
+                Features
+            </a>
+
+            <a href="/#builders">
+                Builders
+            </a>
+
+        </div>
+
+        <a href="/" class="home-button">
+            Back Home
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+    <section class="hero">
+
+        <img
+            src="/VC%20logo.png"
+            alt="Vodka Client Logo"
+        >
+
+        <div class="label">
+            Privacy
+        </div>
+
+        <h1>
+            Privacy Policy
+        </h1>
+
+        <p>
+            This Privacy Policy explains how Vodka Client may collect,
+            use, store, and protect information when you visit
+            vodkaclient.download or use Vodka Client and related services.
+        </p>
+
+        <div class="updated">
+            Last updated: September 4, 2026
+        </div>
+
+    </section>
+
+
+    <div class="container">
+
+        <div class="privacy-card">
+
+            <div class="notice">
+                <strong>Privacy matters.</strong>
+                Vodka Client aims to collect only information that is reasonably
+                necessary to operate, secure, improve, and support the project.
+            </div>
+
+
+            <section>
+
+                <h2>
+                    1. Information We Collect
+                </h2>
+
+                <p>
+                    Depending on how Vodka Client and its services are implemented,
+                    we may collect limited information when you use the website,
+                    client, download services, update services, or other related systems.
+                </p>
+
+                <p>
+                    This information may include:
+                </p>
+
+                <ul>
+
+                    <li>
+                        IP address.
+                    </li>
+
+                    <li>
+                        Browser type and device information.
+                    </li>
+
+                    <li>
+                        Operating system information.
+                    </li>
+
+                    <li>
+                        Website pages visited.
+                    </li>
+
+                    <li>
+                        Basic request and server logs.
+                    </li>
+
+                    <li>
+                        Error reports and crash information.
+                    </li>
+
+                    <li>
+                        Vodka Client version information.
+                    </li>
+
+                    <li>
+                        Minecraft version information.
+                    </li>
+
+                    <li>
+                        Technical information necessary for updates,
+                        authentication, security, or compatibility.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    2. Information You Provide
+                </h2>
+
+                <p>
+                    If you contact Vodka Client, submit feedback,
+                    report a bug, or otherwise communicate with the project,
+                    we may receive information that you voluntarily provide.
+                </p>
+
+                <p>
+                    This may include usernames, messages, screenshots,
+                    logs, crash reports, or other information you choose
+                    to submit.
+                </p>
+
+                <p>
+                    You should avoid submitting passwords, authentication tokens,
+                    session tokens, private keys, or other sensitive credentials.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    3. Minecraft and Microsoft Credentials
+                </h2>
+
+                <p>
+                    Vodka Client does not require you to publicly disclose
+                    your Microsoft or Minecraft password.
+                </p>
+
+                <p>
+                    You should never send your Microsoft password,
+                    Minecraft password, account recovery code,
+                    authentication token, or other sensitive account
+                    credentials to another person.
+                </p>
+
+                <p>
+                    If Vodka Client later uses an authentication system,
+                    authentication information should be handled through
+                    appropriate authentication methods rather than by
+                    directly collecting account passwords.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    4. How We Use Information
+                </h2>
+
+                <p>
+                    Information may be used for purposes such as:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Operating the Vodka Client website and services.
+                    </li>
+
+                    <li>
+                        Delivering client updates.
+                    </li>
+
+                    <li>
+                        Detecting bugs and crashes.
+                    </li>
+
+                    <li>
+                        Improving performance and compatibility.
+                    </li>
+
+                    <li>
+                        Protecting against abuse, attacks, fraud,
+                        or malicious activity.
+                    </li>
+
+                    <li>
+                        Diagnosing technical issues.
+                    </li>
+
+                    <li>
+                        Understanding how the website or client is used.
+                    </li>
+
+                    <li>
+                        Providing support.
+                    </li>
+
+                    <li>
+                        Maintaining security.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    5. Logs
+                </h2>
+
+                <p>
+                    Like many websites and online services,
+                    vodkaclient.download may automatically generate
+                    server logs.
+                </p>
+
+                <p>
+                    Logs can include IP addresses, timestamps,
+                    requested pages, browser information,
+                    response codes, and other technical information.
+                </p>
+
+                <p>
+                    Logs may be used for security, diagnostics,
+                    troubleshooting, analytics, and abuse prevention.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    6. Analytics
+                </h2>
+
+                <p>
+                    Vodka Client may use privacy-conscious analytics
+                    or similar tools to understand website traffic
+                    and client usage.
+                </p>
+
+                <p>
+                    Analytics may provide information such as approximate
+                    visitor counts, page views, device types,
+                    browser types, and general usage patterns.
+                </p>
+
+                <p>
+                    If analytics services are added in the future,
+                    those providers may process information according
+                    to their own privacy policies.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    7. Cookies
+                </h2>
+
+                <p>
+                    The Vodka Client website may use cookies or local
+                    storage when necessary for website functionality,
+                    preferences, security, or analytics.
+                </p>
+
+                <p>
+                    Cookies are small pieces of data stored by your browser.
+                </p>
+
+                <p>
+                    You can usually control or delete cookies through
+                    your browser settings.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    8. Client Configuration
+                </h2>
+
+                <p>
+                    Vodka Client may store settings, module configurations,
+                    keybinds, profiles, or other preferences locally
+                    on your device.
+                </p>
+
+                <p>
+                    Local configuration files generally remain on your
+                    computer unless a feature specifically requires
+                    synchronization or online storage.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    9. Crash Reports
+                </h2>
+
+                <p>
+                    Vodka Client may allow crash reports or diagnostic
+                    information to be submitted in order to identify
+                    and fix problems.
+                </p>
+
+                <p>
+                    Crash reports may contain technical details about
+                    your system, Minecraft version, client version,
+                    installed modules, error messages, and related
+                    diagnostic information.
+                </p>
+
+                <p>
+                    Users should review logs before sharing them if they
+                    believe the logs may contain information they do
+                    not want to disclose.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    10. Data Sharing
+                </h2>
+
+                <p>
+                    Vodka Client does not intend to sell your personal
+                    information.
+                </p>
+
+                <p>
+                    Information may be shared with service providers
+                    when reasonably necessary to operate the website
+                    or services.
+                </p>
+
+                <p>
+                    Examples could include hosting providers,
+                    content delivery networks, security providers,
+                    analytics providers, or infrastructure services.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    11. Legal Requirements
+                </h2>
+
+                <p>
+                    Information may be disclosed if reasonably necessary
+                    to comply with applicable law, legal process,
+                    court orders, or valid governmental requests.
+                </p>
+
+                <p>
+                    Information may also be used or disclosed when
+                    reasonably necessary to protect Vodka Client,
+                    its users, infrastructure, or other people
+                    from fraud, abuse, security threats,
+                    or unlawful activity.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    12. Data Security
+                </h2>
+
+                <p>
+                    Reasonable measures may be used to protect information
+                    from unauthorized access, alteration, disclosure,
+                    or destruction.
+                </p>
+
+                <p>
+                    However, no internet-connected system or software
+                    can be guaranteed to be completely secure.
+                </p>
+
+                <p>
+                    Users should keep their devices, passwords,
+                    Minecraft accounts, Microsoft accounts,
+                    and authentication information secure.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    13. Data Retention
+                </h2>
+
+                <p>
+                    Information may be retained only for as long as
+                    reasonably necessary for the purposes for which
+                    it was collected, including security,
+                    troubleshooting, abuse prevention,
+                    legal compliance, and service operation.
+                </p>
+
+                <p>
+                    Different types of information may be retained
+                    for different periods of time.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    14. Third-Party Services
+                </h2>
+
+                <p>
+                    Vodka Client may depend on or interact with
+                    third-party services such as web hosting,
+                    Minecraft, Microsoft authentication,
+                    Mojang services, APIs, content delivery networks,
+                    or other infrastructure.
+                </p>
+
+                <p>
+                    Third-party services have their own privacy policies
+                    and practices.
+                </p>
+
+                <p>
+                    Vodka Client does not control how independent
+                    third parties process information.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    15. External Links
+                </h2>
+
+                <p>
+                    The Vodka Client website may contain links to
+                    third-party websites.
+                </p>
+
+                <p>
+                    We are not responsible for the privacy practices,
+                    content, or security of external websites.
+                </p>
+
+                <p>
+                    You should review the privacy policies of third-party
+                    websites before providing information to them.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    16. Children
+                </h2>
+
+                <p>
+                    Vodka Client is not intended to knowingly collect
+                    unnecessary personal information from children.
+                </p>
+
+                <p>
+                    If you believe personal information belonging to
+                    a child has been submitted improperly,
+                    contact the project so the situation can be reviewed.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    17. Your Choices
+                </h2>
+
+                <p>
+                    Depending on the services offered and applicable law,
+                    you may have options regarding certain information.
+                </p>
+
+                <p>
+                    These options may include:
+                </p>
+
+                <ul>
+
+                    <li>
+                        Disabling cookies through your browser.
+                    </li>
+
+                    <li>
+                        Choosing not to submit optional diagnostic data.
+                    </li>
+
+                    <li>
+                        Choosing not to submit crash reports.
+                    </li>
+
+                    <li>
+                        Removing local Vodka Client configuration files.
+                    </li>
+
+                    <li>
+                        Requesting information about data associated
+                        with you when reasonably identifiable.
+                    </li>
+
+                </ul>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    18. Changes to This Privacy Policy
+                </h2>
+
+                <p>
+                    This Privacy Policy may be updated as Vodka Client
+                    develops, adds new features, or changes how its
+                    website and services operate.
+                </p>
+
+                <p>
+                    The latest version of the Privacy Policy will be
+                    published on this page.
+                </p>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    19. Contact
+                </h2>
+
+                <p>
+                    Questions or privacy-related concerns regarding
+                    Vodka Client may be directed through an official
+                    contact method provided by the project.
+                </p>
+
+                <div class="info-box">
+
+                    Official website:
+                    <strong>vodkaclient.download</strong>
+
+                </div>
+
+            </section>
+
+
+            <section>
+
+                <h2>
+                    20. Minecraft Disclaimer
+                </h2>
+
+                <p>
+                    Vodka Client is an independent project and is not
+                    affiliated with, endorsed by, sponsored by,
+                    or officially associated with Mojang Studios,
+                    Microsoft, or Minecraft.
+                </p>
+
+                <p>
+                    Minecraft and related trademarks belong to
+                    their respective owners.
+                </p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-inner">
+
+        <div>
+            © 2026 Vodka Client
+        </div>
+
+        <div class="footer-links">
+
+            <a href="/">
+                Home
+            </a>
+
+            <a href="/terms-of-service/">
+                Terms of Service
+            </a>
+
+            <a href="/privacy-policy/">
+                Privacy Policy
+            </a>
+
+        </div>
+
+        <div>
+            Not affiliated with Mojang Studios or Microsoft.
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
