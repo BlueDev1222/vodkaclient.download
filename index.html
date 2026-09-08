@@ -1,1810 +1,893 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Vodka Client | Built for Anarchy</title>
-
-    <meta name="description" content="Vodka Client is an upcoming Minecraft client built for anarchy servers, builders, PvP, and Crystal PvP.">
-
-    <meta name="theme-color" content="#08080a">
-
-    <!-- ========================================= -->
-    <!-- TAB ICON / FAVICON -->
-    <!-- ========================================= -->
-
-    <link rel="icon" type="image/png" href="/VC%20logo.png">
-    <link rel="shortcut icon" type="image/png" href="/VC%20logo.png">
-    <link rel="apple-touch-icon" href="/VC%20logo.png">
-
-    <!-- ========================================= -->
-    <!-- DISCORD / SOCIAL MEDIA EMBED -->
-    <!-- ========================================= -->
-
-    <meta property="og:title" content="Vodka Client">
-    <meta property="og:site_name" content="Vodka Client">
-
-    <meta
-        property="og:description"
-        content="Built for anarchy. Made for builders. PvP and Crystal PvP included."
-    >
-
-    <meta property="og:type" content="website">
-
-    <meta
-        property="og:url"
-        content="https://vodkaclient.download/"
-    >
-
-    <meta
-        property="og:image"
-        content="https://vodkaclient.download/VC%20logo.png"
-    >
-
-    <meta
-        property="og:image:secure_url"
-        content="https://vodkaclient.download/VC%20logo.png"
-    >
-
-    <meta property="og:image:type" content="image/png">
-
-    <meta
-        property="og:image:alt"
-        content="Vodka Client Logo"
-    >
-
-    <!-- X / TWITTER EMBED -->
-
-    <meta
-        name="twitter:card"
-        content="summary_large_image"
-    >
-
-    <meta
-        name="twitter:title"
-        content="Vodka Client"
-    >
-
-    <meta
-        name="twitter:description"
-        content="Built for anarchy. Made for builders. PvP and Crystal PvP included."
-    >
-
-    <meta
-        name="twitter:image"
-        content="https://vodkaclient.download/VC%20logo.png"
-    >
-
-
-    <style>
-
-        /* ========================================= */
-        /* GLOBAL */
-        /* ========================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-
-            font-family:
-                Inter,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 50% -10%,
-                    rgba(190, 35, 50, 0.20),
-                    transparent 40%
-                ),
-                #08080a;
-
-            color: white;
-
-            min-height: 100vh;
-
-            overflow-x: hidden;
-
-        }
-
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            background-image:
-
-                linear-gradient(
-                    rgba(255,255,255,0.018) 1px,
-                    transparent 1px
-                ),
-
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.018) 1px,
-                    transparent 1px
-                );
-
-            background-size: 50px 50px;
-
-            pointer-events: none;
-
-            z-index: -1;
-
-        }
-
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-
-        /* ========================================= */
-        /* NAVIGATION */
-        /* ========================================= */
-
-        nav {
-
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-
-            z-index: 1000;
-
-            background: rgba(8, 8, 10, 0.72);
-
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-
-            border-bottom:
-                1px solid rgba(255,255,255,0.07);
-
-        }
-
-
-        .nav-inner {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-            height: 76px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            padding: 0 24px;
-
-        }
-
-
-        .logo {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 12px;
-
-            font-weight: 900;
-
-            letter-spacing: 1px;
-
-            font-size: 20px;
-
-        }
-
-
-        .logo img {
-
-            width: 45px;
-            height: 45px;
-
-            object-fit: cover;
-
-            border-radius: 10px;
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-
-            box-shadow:
-                0 0 25px rgba(239,51,73,0.15);
-
-        }
-
-
-        .nav-links {
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 28px;
-
-            color: #a9a9b1;
-
-            font-size: 14px;
-
-        }
-
-
-        .nav-links a {
-
-            transition:
-                color 0.2s,
-                transform 0.2s;
-
-        }
-
-
-        .nav-links a:hover {
-
-            color: white;
-
-            transform: translateY(-1px);
-
-        }
-
-
-        .nav-button {
-
-            padding: 10px 18px;
-
-            border:
-                1px solid rgba(255,255,255,0.12);
-
-            border-radius: 10px;
-
-            color: #77777e;
-
-            background:
-                rgba(255,255,255,0.03);
-
-            cursor: not-allowed;
-
-            font-size: 14px;
-
-        }
-
-
-        /* ========================================= */
-        /* HERO */
-        /* ========================================= */
-
-        .hero {
-
-            min-height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding:
-                130px
-                24px
-                90px;
-
-            text-align: center;
-
-            position: relative;
-
-        }
-
-
-        .hero-glow {
-
-            position: absolute;
-
-            width: 650px;
-            height: 650px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(188, 27, 48, 0.13);
-
-            filter: blur(130px);
-
-            z-index: -1;
-
-        }
-
-
-        .hero-content {
-
-            max-width: 920px;
-
-        }
-
-
-        /* MAIN LOGO IMAGE */
-
-        .hero-logo {
-
-            width: min(430px, 88vw);
-
-            height: auto;
-
-            display: block;
-
-            margin:
-                0 auto
-                35px auto;
-
-            border-radius: 25px;
-
-            box-shadow:
-
-                0 0 80px
-                rgba(239,51,73,0.15),
-
-                0 30px 100px
-                rgba(0,0,0,0.45);
-
-        }
-
-
-        .status {
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            padding:
-                8px
-                13px;
-
-            border-radius: 999px;
-
-            background:
-                rgba(255,255,255,0.045);
-
-            border:
-                1px solid rgba(255,255,255,0.08);
-
-            color: #bebec5;
-
-            font-size: 13px;
-
-            margin-bottom: 28px;
-
-        }
-
-
-        .status-dot {
-
-            width: 8px;
-            height: 8px;
-
-            background: #ef3349;
-
-            border-radius: 50%;
-
-            box-shadow:
-                0 0 12px
-                rgba(239,51,73,0.9);
-
-        }
-
-
-        .hero h1 {
-
-            font-size:
-                clamp(
-                    55px,
-                    11vw,
-                    120px
-                );
-
-            line-height: 0.95;
-
-            letter-spacing: -6px;
-
-            font-weight: 900;
-
-            background:
-
-                linear-gradient(
-                    180deg,
-                    #ffffff,
-                    #9999a3
-                );
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-
-            margin-bottom: 26px;
-
-        }
-
-
-        .hero h2 {
-
-            font-size:
-                clamp(
-                    24px,
-                    4vw,
-                    40px
-                );
-
-            font-weight: 700;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .hero h2 span {
-
-            color: #ef3349;
-
-        }
-
-
-        .hero-description {
-
-            color: #96969f;
-
-            max-width: 700px;
-
-            margin: auto;
-
-            font-size: 17px;
-
-            line-height: 1.8;
-
-        }
-
-
-        .hero-buttons {
-
-            margin-top: 36px;
-
-            display: flex;
-
-            justify-content: center;
-
-            gap: 12px;
-
-            flex-wrap: wrap;
-
-        }
-
-
-        .button {
-
-            min-width: 170px;
-
-            padding:
-                14px
-                22px;
-
-            border-radius: 12px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            transition: 0.2s;
-
-        }
-
-
-        .button-primary {
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #ef3349,
-                    #b5162b
-                );
-
-            box-shadow:
-
-                0 10px 35px
-                rgba(239,51,73,0.20);
-
-            cursor: not-allowed;
-
-            opacity: 0.75;
-
-        }
-
-
-        .button-secondary {
-
-            border:
-                1px solid rgba(255,255,255,0.1);
-
-            background:
-                rgba(255,255,255,0.035);
-
-            color: #d5d5dc;
-
-        }
-
-
-        .button-secondary:hover {
-
-            border-color:
-                rgba(255,255,255,0.22);
-
-            background:
-                rgba(255,255,255,0.06);
-
-        }
-
-
-        /* ========================================= */
-        /* GENERAL SECTIONS */
-        /* ========================================= */
-
-        section {
-
-            padding:
-                110px
-                24px;
-
-        }
-
-
-        .container {
-
-            max-width: 1180px;
-
-            margin: auto;
-
-        }
-
-
-        .section-label {
-
-            color: #ef3349;
-
-            text-transform: uppercase;
-
-            letter-spacing: 3px;
-
-            font-size: 12px;
-
-            font-weight: 800;
-
-            margin-bottom: 14px;
-
-        }
-
-
-        .section-title {
-
-            font-size:
-                clamp(
-                    36px,
-                    5vw,
-                    58px
-                );
-
-            letter-spacing: -2px;
-
-            margin-bottom: 17px;
-
-        }
-
-
-        .section-description {
-
-            max-width: 680px;
-
-            color: #96969f;
-
-            font-size: 16px;
-
-            line-height: 1.8;
-
-        }
-
-
-        /* ========================================= */
-        /* FEATURES */
-        /* ========================================= */
-
-        .features {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 18px;
-
-            margin-top: 55px;
-
-        }
-
-
-        .feature {
-
-            padding: 30px;
-
-            border-radius: 18px;
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.055),
-                    rgba(255,255,255,0.018)
-                );
-
-            border:
-                1px solid rgba(255,255,255,0.075);
-
-            min-height: 250px;
-
-            transition:
-
-                transform 0.25s,
-                border-color 0.25s,
-                background 0.25s;
-
-        }
-
-
-        .feature:hover {
-
-            transform:
-                translateY(-5px);
-
-            border-color:
-                rgba(239,51,73,0.32);
-
-            background:
-
-                linear-gradient(
-                    145deg,
-                    rgba(239,51,73,0.08),
-                    rgba(255,255,255,0.02)
-                );
-
-        }
-
-
-        .feature-icon {
-
-            width: 46px;
-            height: 46px;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            border-radius: 12px;
-
-            background:
-                rgba(239,51,73,0.10);
-
-            border:
-                1px solid rgba(239,51,73,0.2);
-
-            font-size: 20px;
-
-            margin-bottom: 24px;
-
-        }
-
-
-        .feature h3 {
-
-            font-size: 21px;
-
-            margin-bottom: 12px;
-
-        }
-
-
-        .feature p {
-
-            color: #92929b;
-
-            line-height: 1.7;
-
-            font-size: 14px;
-
-        }
-
-
-        .feature.builder {
-
-            grid-column: span 2;
-
-        }
-
-
-        /* ========================================= */
-        /* BUILDERS */
-        /* ========================================= */
-
-        .builder-box {
-
-            margin-top: 55px;
-
-            padding: 50px;
-
-            border-radius: 24px;
-
-            border:
-                1px solid rgba(255,255,255,0.075);
-
-            background:
-
-                radial-gradient(
-                    circle at 0% 0%,
-                    rgba(239,51,73,0.13),
-                    transparent 40%
-                ),
-
-                rgba(255,255,255,0.025);
-
-            display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
-            gap: 55px;
-
-            align-items: center;
-
-        }
-
-
-        .builder-text h3 {
-
-            font-size: 37px;
-
-            letter-spacing: -1px;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .builder-text p {
-
-            color: #9999a1;
-
-            line-height: 1.8;
-
-        }
-
-
-        .builder-list {
-
-            display: grid;
-
-            grid-template-columns:
-                1fr
-                1fr;
-
-            gap: 12px;
-
-        }
-
-
-        .builder-list div {
-
-            padding:
-                14px
-                16px;
-
-            border-radius: 10px;
-
-            background:
-                rgba(255,255,255,0.035);
-
-            border:
-                1px solid rgba(255,255,255,0.055);
-
-            color: #c9c9d0;
-
-            font-size: 14px;
-
-        }
-
-
-        /* ========================================= */
-        /* DEVELOPMENT */
-        /* ========================================= */
-
-        .development-card {
-
-            margin-top: 55px;
-
-            padding: 45px;
-
-            border-radius: 20px;
-
-            border:
-                1px solid rgba(239,51,73,0.18);
-
-            background:
-                rgba(239,51,73,0.045);
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            gap: 30px;
-
-        }
-
-
-        .development-card h3 {
-
-            font-size: 28px;
-
-            margin-bottom: 8px;
-
-        }
-
-
-        .development-card p {
-
-            color: #9a9aa2;
-
-            line-height: 1.7;
-
-        }
-
-
-        .dev-badge {
-
-            white-space: nowrap;
-
-            padding:
-                12px
-                18px;
-
-            border-radius: 999px;
-
-            background:
-                rgba(239,51,73,0.12);
-
-            border:
-                1px solid rgba(239,51,73,0.22);
-
-            color: #ff6b7e;
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-        }
-
-
-        /* ========================================= */
-        /* BOTTOM CTA */
-        /* ========================================= */
-
-        .cta {
-
-            text-align: center;
-
-            padding-top: 160px;
-
-            padding-bottom: 160px;
-
-        }
-
-
-        .cta-logo {
-
-            width:
-                min(
-                    250px,
-                    65vw
-                );
-
-            border-radius: 20px;
-
-            margin-bottom: 35px;
-
-            box-shadow:
-                0 0 60px rgba(239,51,73,0.1);
-
-        }
-
-
-        .cta h2 {
-
-            font-size:
-                clamp(
-                    50px,
-                    9vw,
-                    100px
-                );
-
-            letter-spacing: -4px;
-
-            margin-bottom: 18px;
-
-        }
-
-
-        .cta p {
-
-            color: #92929b;
-
-            font-size: 17px;
-
-        }
-
-
-        .domain {
-
-            display: inline-block;
-
-            margin-top: 35px;
-
-            color: #ef3349;
-
-            font-weight: 700;
-
-            letter-spacing: 1px;
-
-        }
-
-
-        /* ========================================= */
-        /* FOOTER */
-        /* ========================================= */
-
-        footer {
-
-            border-top:
-                1px solid rgba(255,255,255,0.06);
-
-            padding:
-                35px
-                24px;
-
-        }
-
-
-        .footer-inner {
-
-            max-width: 1180px;
-
-            margin: auto;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            color: #66666e;
-
-            font-size: 13px;
-
-        }
-
-
-        /* ========================================= */
-        /* MOBILE */
-        /* ========================================= */
-
-        @media(max-width: 850px) {
-
-            .nav-links {
-                display: none;
-            }
-
-
-            .features {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .feature.builder {
-
-                grid-column: span 1;
-
-            }
-
-
-            .builder-box {
-
-                grid-template-columns: 1fr;
-
-                padding: 30px;
-
-            }
-
-
-            .development-card {
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-            }
-
-        }
-
-
-        @media(max-width: 520px) {
-
-            .nav-button {
-                display: none;
-            }
-
-
-            .builder-list {
-
-                grid-template-columns: 1fr;
-
-            }
-
-
-            .hero {
-
-                padding-top: 120px;
-
-            }
-
-
-            section {
-
-                padding:
-                    80px
-                    20px;
-
-            }
-
-
-            .footer-inner {
-
-                flex-direction: column;
-
-                gap: 10px;
-
-                text-align: center;
-
-            }
-
-        }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vodka Client</title>
+  <meta name="description" content="Vodka Client is a Minecraft utility client for builders, anarchy, PvP, and Crystal PvP. Currently available for Fabric 1.21.11.">
+  <meta name="theme-color" content="#090909">
+
+  <link rel="icon" type="image/png" href="/VC%20logo.png">
+  <link rel="apple-touch-icon" href="/VC%20logo.png">
+
+  <meta property="og:title" content="Vodka Client">
+  <meta property="og:description" content="A Minecraft utility client for builders, anarchy, PvP, and Crystal PvP.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vodkaclient.download/">
+  <meta property="og:image" content="https://vodkaclient.download/VC%20logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vodka Client">
+  <meta name="twitter:description" content="A Minecraft utility client for builders, anarchy, PvP, and Crystal PvP.">
+  <meta name="twitter:image" content="https://vodkaclient.download/VC%20logo.png">
+
+  <style>
+    :root {
+      --bg: #090909;
+      --bg-soft: #0f0f10;
+      --panel: #131315;
+      --panel-2: #18181b;
+      --text: #f5f5f5;
+      --muted: #9a9aa2;
+      --line: #252529;
+      --red: #ef3349;
+      --red-2: #b8162d;
+      --red-soft: rgba(239, 51, 73, 0.12);
+      --green: #47d16c;
+      --yellow: #f0bd56;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 50% -100px, rgba(239, 51, 73, 0.13), transparent 420px),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 72%);
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: rgba(9,9,9,.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .brand img {
+      width: 36px;
+      height: 36px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 15px;
+      border: 1px solid rgba(239,51,73,.34);
+      border-radius: 9px;
+      color: white !important;
+      background: linear-gradient(180deg, rgba(239,51,73,.95), rgba(184,22,45,.95));
+      box-shadow: 0 8px 26px rgba(239,51,73,.14);
+    }
+
+    .hero {
+      padding: 92px 0 68px;
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: clamp(122px, 15vw, 170px);
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.09);
+      box-shadow: 0 28px 85px rgba(0,0,0,.5), 0 0 70px rgba(239,51,73,.13);
+      margin-bottom: 30px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #c8c8ce;
+      background: rgba(255,255,255,.025);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 14px rgba(71,209,108,.55);
+    }
+
+    h1 {
+      font-size: clamp(56px, 10vw, 108px);
+      line-height: .94;
+      letter-spacing: -.065em;
+      margin-bottom: 24px;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 19px);
+    }
+
+    .hero-actions {
+      margin-top: 31px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 18px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      border-color: rgba(239,51,73,.34);
+      background: linear-gradient(180deg, var(--red), var(--red-2));
+      box-shadow: 0 12px 30px rgba(239,51,73,.14);
+    }
+
+    .button-secondary {
+      color: #d9d9de;
+      background: rgba(255,255,255,.025);
+    }
+
+    .button-secondary:hover {
+      border-color: #3a3a40;
+      background: rgba(255,255,255,.045);
+    }
+
+    .version-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .version-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      background: #111113;
+      color: #b8b8bf;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .version-pill.current {
+      border-color: rgba(239,51,73,.4);
+      color: white;
+      background: var(--red-soft);
+    }
+
+    .version-pill .mini-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #55555c;
+    }
+
+    .version-pill.current .mini-dot {
+      background: var(--red);
+      box-shadow: 0 0 10px rgba(239,51,73,.65);
+    }
+
+    section {
+      padding: 74px 0;
+      border-top: 1px solid rgba(255,255,255,.045);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      color: var(--red);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 900;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .section-head p {
+      max-width: 540px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .release-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(180deg, #141416, #101011);
+      box-shadow: 0 22px 70px rgba(0,0,0,.22);
+    }
+
+    .release-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.015);
+    }
+
+    .release-top strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 2px;
+    }
+
+    .release-top span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border: 1px solid rgba(71,209,108,.25);
+      border-radius: 999px;
+      background: rgba(71,209,108,.08);
+      color: #8be6a4;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+
+    th, td {
+      padding: 16px 22px;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      font-size: 14px;
+    }
+
+    th {
+      color: #86868f;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      background: rgba(255,255,255,.012);
+    }
+
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td {
+      color: #d8d8dc;
+    }
+
+    .download-link {
+      color: #ff6375;
+      font-weight: 800;
+    }
+
+    .download-link:hover {
+      text-decoration: underline;
+    }
+
+    .muted {
+      color: #696970;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .feature {
+      grid-column: span 4;
+      min-height: 218px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: linear-gradient(160deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature.feature-wide {
+      grid-column: span 8;
+    }
+
+    .feature::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      right: -70px;
+      bottom: -70px;
+      border-radius: 50%;
+      background: rgba(239,51,73,.07);
+      filter: blur(6px);
+    }
+
+    .feature-tag {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 34px;
+    }
+
+    .feature h3 {
+      font-size: 24px;
+      letter-spacing: -.025em;
+      margin-bottom: 8px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 540px;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .roadmap-item {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px;
+      background: #111113;
+    }
+
+    .roadmap-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      color: white;
+      background: var(--red-soft);
+      border: 1px solid rgba(239,51,73,.25);
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 28px;
+    }
+
+    .roadmap-item h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .roadmap-item p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 10px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #111113;
+      padding: 0 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      padding: 17px 0;
+      font-weight: 800;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details p {
+      color: var(--muted);
+      padding: 0 0 18px;
+      font-size: 14px;
+      max-width: 760px;
+    }
+
+    .cta {
+      border: 1px solid rgba(239,51,73,.22);
+      border-radius: 18px;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(239,51,73,.14), transparent 260px),
+        linear-gradient(180deg, #141416, #101011);
+      padding: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      max-width: 600px;
+    }
+
+    footer {
+      padding: 34px 0 42px;
+      border-top: 1px solid rgba(255,255,255,.055);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #d5d5da;
+      font-weight: 800;
+    }
+
+    .footer-brand img {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links a:not(.nav-cta) {
+        display: none;
+      }
+
+      .section-head,
+      .cta,
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .feature,
+      .feature.feature-wide {
+        grid-column: span 6;
+      }
+
+      .roadmap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(var(--max), calc(100% - 26px));
+      }
+
+      .hero {
+        padding-top: 68px;
+      }
+
+      h1 {
+        font-size: clamp(52px, 18vw, 82px);
+      }
+
+      .feature,
+      .feature.feature-wide {
+        grid-column: span 12;
+      }
+
+      .roadmap {
+        grid-template-columns: 1fr;
+      }
+
+      .cta {
+        padding: 28px 22px;
+      }
+
+      .release-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
-
 <body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <img src="/VC%20logo.png" alt="Vodka Client logo">
+        <span>Vodka Client</span>
+      </a>
 
-
-<!-- ========================================= -->
-<!-- NAVBAR -->
-<!-- ========================================= -->
-
-<nav>
-
-    <div class="nav-inner">
-
-        <a
-            href="#"
-            class="logo"
-        >
-
-            <img
-                src="/VC%20logo.png"
-                alt="Vodka Client Logo"
-            >
-
-            <span>
-                VODKA
-            </span>
-
-        </a>
-
-
-        <div class="nav-links">
-
-            <a href="#features">
-                Features
-            </a>
-
-            <a href="#builders">
-                Builders
-            </a>
-
-            <a href="#development">
-                Development
-            </a>
-
-        </div>
-
-
-        <div class="nav-button">
-
-            Coming Soon
-
-        </div>
-
+      <div class="nav-links">
+        <a href="#downloads">Downloads</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="https://github.com/Vodka-Client/Vodka-Client" target="_blank" rel="noopener">GitHub</a>
+        <a class="nav-cta" href="https://github.com/Vodka-Client/Vodka-Client/releases" target="_blank" rel="noopener">Download</a>
+      </div>
     </div>
+  </nav>
 
-</nav>
+  <main id="top">
+    <header class="hero">
+      <div class="container">
+        <img class="hero-logo" src="/VC%20logo.png" alt="Vodka Client">
 
-
-
-<main>
-
-
-<!-- ========================================= -->
-<!-- HERO -->
-<!-- ========================================= -->
-
-<section class="hero">
-
-    <div class="hero-glow"></div>
-
-
-    <div class="hero-content">
-
-
-        <div class="status">
-
-            <div class="status-dot"></div>
-
-            Vodka Client is currently in development
-
+        <div class="eyebrow">
+          <span class="dot"></span>
+          V1.0.0 available now for Fabric 1.21.11
         </div>
 
+        <h1>Vodka Client</h1>
 
-        <img
-            src="/VC%20logo.png"
-            alt="Vodka Client"
-            class="hero-logo"
-        >
-
-
-        <h1>
-            VODKA
-        </h1>
-
-
-        <h2>
-
-            Built for Anarchy.
-
-            <span>
-                Made for Builders.
-            </span>
-
-        </h2>
-
-
-        <p class="hero-description">
-
-            Vodka Client is an upcoming Minecraft client
-            designed for anarchy players, builders,
-            PvP players and Crystal PvP.
-
-            Our biggest focus is creating powerful tools
-            for players building massive projects
-            in anarchy environments.
-
+        <p class="hero-copy">
+          A Minecraft utility client built around builders and anarchy gameplay, with PvP, Crystal PvP, movement, and quality-of-life tools included.
         </p>
 
-
-        <div class="hero-buttons">
-
-
-            <div class="button button-primary">
-
-                Download — Coming Soon
-
-            </div>
-
-
-            <a
-                href="#features"
-                class="button button-secondary"
-            >
-
-                Explore Features
-
-            </a>
-
-
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://github.com/Vodka-Client/Vodka-Client/releases" target="_blank" rel="noopener">Download V1.0.0</a>
+          <a class="button button-secondary" href="https://github.com/Vodka-Client/Vodka-Client" target="_blank" rel="noopener">View on GitHub</a>
         </div>
 
-    </div>
+        <div class="version-row" aria-label="Version support">
+          <a class="version-pill current" href="https://github.com/Vodka-Client/Vodka-Client/releases" target="_blank" rel="noopener"><span class="mini-dot"></span>1.21.11</a>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.10 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.9 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.8 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.7 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.6 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.5 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>1.21.4 soon</span>
+          <span class="version-pill"><span class="mini-dot"></span>26.1 planned</span>
+          <span class="version-pill"><span class="mini-dot"></span>26.2 planned</span>
+        </div>
+      </div>
+    </header>
 
-</section>
-
-
-
-<!-- ========================================= -->
-<!-- FEATURES -->
-<!-- ========================================= -->
-
-<section id="features">
-
-    <div class="container">
-
-
-        <div class="section-label">
-
-            Vodka Client
-
+    <section id="downloads">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Downloads</div>
+            <h2>Pick your version.</h2>
+          </div>
+          <p>
+            Fabric is the currently supported loader. More 1.21.x builds are coming next, followed by 26.1 and 26.2. NeoForge support is planned for the future.
+          </p>
         </div>
 
-
-        <h2 class="section-title">
-
-            One client.<br>
-
-            Multiple playstyles.
-
-        </h2>
-
-
-        <p class="section-description">
-
-            Vodka is being designed around the ways
-            people actually play anarchy Minecraft,
-            with a major focus on building while
-            still providing utilities for exploration
-            and combat.
-
-        </p>
-
-
-        <div class="features">
-
-
-            <div class="feature builder">
-
-
-                <div class="feature-icon">
-
-                    ⛏
-
-                </div>
-
-
-                <h3>
-
-                    Building
-
-                </h3>
-
-
-                <p>
-
-                    Building is the core focus of Vodka Client.
-
-                    We're working on tools designed to make
-                    massive bases, highways, monuments,
-                    infrastructure and other large-scale
-                    anarchy projects easier to create
-                    and manage.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="feature">
-
-
-                <div class="feature-icon">
-
-                    ◈
-
-                </div>
-
-
-                <h3>
-
-                    Anarchy
-
-                </h3>
-
-
-                <p>
-
-                    Utilities designed around huge worlds,
-                    long-distance travel, dangerous environments
-                    and the unpredictable nature of
-                    anarchy servers.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="feature">
-
-
-                <div class="feature-icon">
-
-                    ⚔
-
-                </div>
-
-
-                <h3>
-
-                    PvP
-
-                </h3>
-
-
-                <p>
-
-                    Vodka will include configurable combat
-                    utilities for players who want to fight
-                    while exploring or protecting
-                    their projects.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="feature">
-
-
-                <div class="feature-icon">
-
-                    ✦
-
-                </div>
-
-
-                <h3>
-
-                    Crystal PvP
-
-                </h3>
-
-
-                <p>
-
-                    Crystal PvP utilities are planned
-                    for players who want a client capable
-                    of handling high-intensity anarchy combat.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="feature">
-
-
-                <div class="feature-icon">
-
-                    ◉
-
-                </div>
-
-
-                <h3>
-
-                    Render
-
-                </h3>
-
-
-                <p>
-
-                    Visual utilities to make navigation,
-                    building, exploration and understanding
-                    your surroundings easier.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="feature">
-
-
-                <div class="feature-icon">
-
-                    ⚙
-
-                </div>
-
-
-                <h3>
-
-                    Customization
-
-                </h3>
-
-
-                <p>
-
-                    Configure Vodka around your playstyle
-                    instead of forcing yourself into
-                    one preset way of playing.
-
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================= -->
-<!-- BUILDERS -->
-<!-- ========================================= -->
-
-<section id="builders">
-
-    <div class="container">
-
-
-        <div class="section-label">
-
-            Builder First
-
-        </div>
-
-
-        <h2 class="section-title">
-
-            Built for people who actually build.
-
-        </h2>
-
-
-        <p class="section-description">
-
-            Most anarchy clients heavily prioritize combat.
-
-            Vodka is being built differently.
-
-            Building and large-scale projects are
-            one of our primary focuses.
-
-        </p>
-
-
-
-        <div class="builder-box">
-
-
-            <div class="builder-text">
-
-
-                <h3>
-
-                    Build bigger.
-
-                </h3>
-
-
-                <p>
-
-                    Whether you're repairing infrastructure,
-                    constructing highways, creating giant bases,
-                    working with schematics or building at spawn,
-                    Vodka aims to provide tools that make
-                    repetitive and difficult building work
-                    significantly easier.
-
-                </p>
-
-
-            </div>
-
-
-
-            <div class="builder-list">
-
-
-                <div>
-                    Large Bases
-                </div>
-
-
-                <div>
-                    Highways
-                </div>
-
-
-                <div>
-                    Spawn Projects
-                </div>
-
-
-                <div>
-                    Megabuilds
-                </div>
-
-
-                <div>
-                    Schematics
-                </div>
-
-
-                <div>
-                    Infrastructure
-                </div>
-
-
-                <div>
-                    Map Art
-                </div>
-
-
-                <div>
-                    Anarchy Projects
-                </div>
-
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================= -->
-<!-- DEVELOPMENT -->
-<!-- ========================================= -->
-
-<section id="development">
-
-    <div class="container">
-
-
-        <div class="section-label">
-
-            Status
-
-        </div>
-
-
-        <h2 class="section-title">
-
-            Still being built.
-
-        </h2>
-
-
-        <p class="section-description">
-
-            Vodka Client is not currently finished.
-
-            Features, modules and designs may change
-            as development continues.
-
-        </p>
-
-
-
-        <div class="development-card">
-
-
+        <div class="release-card">
+          <div class="release-top">
             <div>
-
-
-                <h3>
-
-                    Vodka Client is in development.
-
-                </h3>
-
-
-                <p>
-
-                    There is currently no public release.
-
-                    The download will become available
-                    when Vodka is ready.
-
-                </p>
-
-
+              <strong>Vodka Client V1.0.0</strong>
+              <span>Current public release</span>
             </div>
+            <div class="status-badge"><span class="dot"></span>Released</div>
+          </div>
 
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Version</th>
+                  <th>Loader</th>
+                  <th>Status</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1.21.11</strong></td>
+                  <td>Fabric</td>
+                  <td>Supported</td>
+                  <td><a class="download-link" href="https://github.com/Vodka-Client/Vodka-Client/releases" target="_blank" rel="noopener">Download</a></td>
+                </tr>
+                <tr><td>1.21.10</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>1.21.9</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>1.21.8</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>1.21.7</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>1.21.6</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>1.21.5</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>1.21.4</td><td>Fabric</td><td>Coming soon</td><td class="muted">Not released</td></tr>
+                <tr><td>26.1</td><td>Fabric</td><td>Planned</td><td class="muted">Not released</td></tr>
+                <tr><td>26.2</td><td>Fabric</td><td>Planned</td><td class="muted">Not released</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
 
-
-            <div class="dev-badge">
-
-                ● IN DEVELOPMENT
-
-            </div>
-
-
+    <section id="features">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">What it is</div>
+            <h2>Built to be useful.</h2>
+          </div>
+          <p>
+            Vodka Client is not meant to be only a PvP client. Building and utility are core parts of the project, especially for anarchy gameplay.
+          </p>
         </div>
 
+        <div class="features-grid">
+          <article class="feature feature-wide">
+            <div class="feature-tag">Primary focus</div>
+            <h3>Building</h3>
+            <p>Tools aimed at making large projects, repetitive placement, navigation, and general building work easier to manage.</p>
+          </article>
 
+          <article class="feature">
+            <div class="feature-tag">Utility</div>
+            <h3>Anarchy</h3>
+            <p>General tools for exploration, travel, navigation, inventory management, and everyday server use.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-tag">Combat</div>
+            <h3>PvP / Crystal PvP</h3>
+            <p>Combat-oriented modules alongside the building and utility systems.</p>
+          </article>
+
+          <article class="feature">
+            <div class="feature-tag">Movement</div>
+            <h3>Travel</h3>
+            <p>Movement and navigation features designed to make getting around easier.</p>
+          </article>
+
+          <article class="feature feature-wide">
+            <div class="feature-tag">Project direction</div>
+            <h3>Clean and expandable</h3>
+            <p>The client is actively being developed with more modules, better performance, improved compatibility, UI refinements, and additional Minecraft version support planned.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Roadmap</div>
+            <h2>What comes next.</h2>
+          </div>
+          <p>The order can change if compatibility work or Minecraft updates require it.</p>
+        </div>
+
+        <div class="roadmap">
+          <div class="roadmap-item">
+            <div class="roadmap-num">01</div>
+            <h3>1.21.11</h3>
+            <p>Current Fabric release and ongoing improvements.</p>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-num">02</div>
+            <h3>1.21.4–1.21.10</h3>
+            <p>Backfill support across the remaining target 1.21.x versions.</p>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-num">03</div>
+            <h3>26.1 &amp; 26.2</h3>
+            <p>Planned after the 1.21.x support work is complete.</p>
+          </div>
+          <div class="roadmap-item">
+            <div class="roadmap-num">04</div>
+            <h3>NeoForge</h3>
+            <p>A future loader target after the Fabric versions are stable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">FAQ</div>
+            <h2>Quick answers.</h2>
+          </div>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>What Minecraft version is supported right now?</summary>
+            <p>Vodka Client V1.0.0 currently supports Minecraft 1.21.11 on Fabric.</p>
+          </details>
+          <details>
+            <summary>Will 1.21.4 through 1.21.10 be supported?</summary>
+            <p>Yes. Those versions are planned next before development moves on to 26.1 and 26.2.</p>
+          </details>
+          <details>
+            <summary>Does Vodka Client support NeoForge?</summary>
+            <p>Not currently. Fabric is the supported loader today, with NeoForge planned as a future target.</p>
+          </details>
+          <details>
+            <summary>Where should I download Vodka Client?</summary>
+            <p>Use the official Vodka Client GitHub releases page linked throughout this website.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta">
+          <div>
+            <div class="section-kicker">Current release</div>
+            <h2>Download Vodka Client V1.0.0.</h2>
+            <p>Fabric 1.21.11 is available now from the official Vodka Client GitHub releases page.</p>
+          </div>
+          <a class="button button-primary" href="https://github.com/Vodka-Client/Vodka-Client/releases" target="_blank" rel="noopener">Open Releases</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="/VC%20logo.png" alt="Vodka Client logo">
+        <span>Vodka Client</span>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/Vodka-Client/Vodka-Client" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/Vodka-Client/Vodka-Client/releases" target="_blank" rel="noopener">Releases</a>
+        <a href="/terms-of-service/">Terms</a>
+        <a href="/privacy-policy/">Privacy</a>
+      </div>
+
+      <div>Not affiliated with Mojang Studios or Microsoft.</div>
     </div>
-
-</section>
-
-
-
-<!-- ========================================= -->
-<!-- BOTTOM -->
-<!-- ========================================= -->
-
-<section class="cta">
-
-    <div class="container">
-
-
-        <img
-            src="/VC%20logo.png"
-            alt="Vodka Client Logo"
-            class="cta-logo"
-        >
-
-
-        <div class="section-label">
-
-            Vodka Client
-
-        </div>
-
-
-        <h2>
-
-            BUILD.<br>
-
-            SURVIVE.<br>
-
-            FIGHT.
-
-        </h2>
-
-
-        <p>
-
-            A new Minecraft client built for anarchy.
-
-        </p>
-
-
-        <span class="domain">
-
-            vodkaclient.download
-
-        </span>
-
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- ========================================= -->
-<!-- FOOTER -->
-<!-- ========================================= -->
-
-<footer>
-
-    <div class="footer-inner">
-
-
-        <div>
-
-            © 2026 Vodka Client
-
-        </div>
-
-
-        <div>
-
-            Not affiliated with Mojang Studios or Microsoft.
-
-        </div>
-
-
-    </div>
-
-</footer>
-
-
-
-<script>
-
-    document
-        .querySelectorAll('a[href^="#"]')
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                function(event) {
-
-                    const target =
-                        document.querySelector(
-                            this.getAttribute("href")
-                        );
-
-                    if (!target) {
-                        return;
-                    }
-
-                    event.preventDefault();
-
-                    target.scrollIntoView({
-                        behavior: "smooth"
-                    });
-
-                }
-            );
-
-        });
-
-</script>
-
-
+  </footer>
 </body>
 </html>
